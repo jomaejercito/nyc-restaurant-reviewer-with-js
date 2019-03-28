@@ -1,0 +1,14 @@
+<% if @user == current_user %>
+  <h1>My Review of <%= @review.restaurant.name %></h1><br>
+<% else %>
+  <h1><%= @user.name %>'s Review of <%= @review.restaurant.name %></h1><br>
+<% end %>
+<p class="lead"><%= @review.comment %></p>
+<p class="lead"><%= @review.rating %>/5</p>
+
+<br>
+
+<% if @user == current_user %>
+  <%= link_to "Edit Review", edit_user_review_url, class: "btn btn-outline-warning" %>
+  <%= link_to "Delete Review", user_review_path, class: "btn btn-outline-danger", :method => 'delete' %>
+<% end %>

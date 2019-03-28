@@ -1,0 +1,21 @@
+<% if @restaurant %>
+  <h1>Add Review of <%= @restaurant.name %></h1>
+<% else %>
+  <h1>Add a Restaurant Review</h1>
+<% end %>
+<br><br>
+
+<div class="form-group">
+  <%= form_for :review, url: user_reviews_path do |f| %>
+    <% if @restaurant %>
+      <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+    <% else %>
+      <legend><%= f.label :restaurant, "Choose Restaurant" %></legend><br>
+      <%= f.collection_select :restaurant_id, Restaurant.order('name ASC'), :id, :name, class: "form-control" %>
+      <br><br><br>
+    <% end %>
+    <%= render partial: 'form', locals: {f: f} %>
+    <br><br><br>
+    <%= f.submit "Create Review", class: "btn btn-outline-secondary" %>
+  <% end %>
+</div>
