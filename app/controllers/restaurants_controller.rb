@@ -6,11 +6,15 @@ class RestaurantsController < ApplicationController
     respond_to do |f|
       f.html {render :index}
       f.json {render json: @restaurants}
-    end    
+    end
   end
 
   def show
     set_restaurant
+    respond_to do |f|
+      f.html {render :show}
+      f.json {render json: @restaurant}
+    end
   end
 
   def highest_rated
