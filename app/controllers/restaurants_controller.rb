@@ -3,6 +3,10 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.order('name ASC')
+    respond_to do |f|
+      f.html {render :index}
+      f.json {render json: @restaurants}
+    end    
   end
 
   def show
