@@ -11,10 +11,6 @@ class NeighborhoodsController < ApplicationController
 
   def show
     @neighborhood = Neighborhood.find(params[:id])
-    respond_to do |f|
-      f.html {render :show}
-      f.json {render json: @neighborhood}
-    end
   end
 
 end
