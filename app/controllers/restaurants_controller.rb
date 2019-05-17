@@ -3,7 +3,6 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.order('name ASC')
-    end
   end
 
   def show

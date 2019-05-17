@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
     respond_to do |f|
       f.html {render :index}
       f.json {render json: @review}
+    end
   end
 
   def new
