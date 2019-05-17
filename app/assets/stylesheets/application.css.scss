@@ -22,6 +22,18 @@ p.lead {
   text-align: center;
 }
 
+.buttons {
+  position: relative;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
 
 h1 {
   position: relative;
@@ -41,10 +53,4 @@ h3 {
 h4 {
   position: relative;
   text-align: center;
-}
-
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

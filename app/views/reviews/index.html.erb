@@ -4,9 +4,11 @@
   <h1><%= @user.name %>'s Restaurant Reviews</h1><br>
 <% end %>
 
-<% if @user == current_user %>
-  <button type="button" class="btn btn-outline-secondary"><%= link_to "Add a Review", new_user_review_url(@user) %></button>
-<% end %>
+<div class="buttons">
+  <% if @user == current_user %>
+    <button type="button" class="btn btn-outline-secondary"><%= link_to "Add a Review", new_user_review_url(@user) %></button>
+  <% end %>
+</div>
 
 <br><br><br>
 
