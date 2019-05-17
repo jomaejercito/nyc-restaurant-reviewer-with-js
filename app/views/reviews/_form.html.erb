@@ -1,10 +1,10 @@
-<div class="form-group">
+
   <legend><%= f.label :rating %></legend><br>
   <%= f.collection_radio_buttons :rating, [[1, '1-star'] ,[2, '2-stars'],[3, '3-stars'],[4, '4-stars'],[5, '5-stars']], :first, :last %>
   <br><br><br>
   <legend><%= f.label :comment, "Comments" %></legend><br>
   <%= f.text_area :comment %>
-</div>
+
 
 <div class="errors">
   <% if @review.errors.any? %>
