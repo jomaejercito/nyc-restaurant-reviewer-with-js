@@ -3,14 +3,18 @@ class CuisinesController < ApplicationController
 
   def index
     @cuisines = Cuisine.order('name ASC')
-    respond_to do |f|
-      f.html {render :index}
-      f.json {render json: @cuisines}
-    end
+    # respond_to do |f|
+    #   f.html
+    #   f.json {render json: @cuisines}
+    # end
   end
 
   def show
     @cuisine = Cuisine.find(params[:id])
+    # respond_to do |f|
+    #   f.html
+    #   f.json {render json: @cuisine}
+    # end
   end
 
 end
