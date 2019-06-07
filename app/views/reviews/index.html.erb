@@ -1,8 +1,10 @@
-<% if @user == current_user %>
-  <h1>My Restaurant Reviews</h1><br>
-<% else %>
-  <h1><%= @user.name %>'s Restaurant Reviews</h1><br>
-<% end %>
+<div id="title" class="title">
+  <% if @user == current_user %>
+    <h1>My Restaurant Reviews</h1><br>
+  <% else %>
+    <h1><%= @user.name %>'s Restaurant Reviews</h1><br>
+  <% end %>
+</div>
 
 <div class="buttons">
   <% if @user == current_user %>
@@ -12,12 +14,14 @@
 
 <br><br><br>
 
-<% @reviews.each do |review| %>
-  <% if @user == current_user %>
-  <p class="lead"><%= link_to review.restaurant.name, user_review_path(@user, review) %><br>Rating:<%= review.rating %>/5<br><%= review.comment %><br></p>
-  <% else %>
-  <strong><h3><p class="lead"><%= review.restaurant.name %></p></h3></strong>
-  <p class="lead">Rating: <%= review.rating %>/5<br><%= review.comment %></p>
-  <br><br>
+<div id="review">
+  <% @reviews.each do |review| %>
+    <% if @user == current_user %>
+    <p class="lead"><%= link_to review.restaurant.name, user_review_path(@user, review) %><br>Rating:<%= review.rating %>/5<br><%= review.comment %><br></p>
+    <% else %>
+    <strong><h3><p class="lead"><%= review.restaurant.name %></p></h3></strong>
+    <p class="lead">Rating: <%= review.rating %>/5<br><%= review.comment %></p>
+    <br><br>
+    <% end %>
   <% end %>
-<% end %>
+</div>

@@ -1,9 +1,11 @@
-<% if @restaurant %>
-  <h1>Add Review of <%= @restaurant.name %></h1>
-<% else %>
-  <h1>Add a Restaurant Review</h1>
-<% end %>
-<br><br>
+<div id="title" class="title">
+  <% if @restaurant %>
+    <h1>Add Review of <%= @restaurant.name %></h1>
+  <% else %>
+    <h1>Add a Restaurant Review</h1>
+  <% end %>
+  <br><br>
+</div>
 
 <div class="form-group">
   <%= form_for :review, url: user_reviews_path do |f| %>

@@ -1,5 +1,10 @@
-<h1>Cuisines</h1>
-<br><br>
-<% @cuisines.each do |cuisine| %>
-  <p class="lead"><%= link_to cuisine.name, cuisine_path(cuisine) %><br><%= cuisine.restaurants.count %> Restaurants</p>
-<% end %>
+<div id="title" class="title">
+  <h1>Cuisines</h1>
+  <br><br>
+</div>
+
+<div id="cuisine-list" class="cuisine-list">
+  <% @cuisines.each do |cuisine| %>
+    <p class="lead"><%= link_to cuisine.name, cuisine_path(cuisine) %><br><%= cuisine.restaurants.count %> Restaurants</p>
+  <% end %>
+</div>

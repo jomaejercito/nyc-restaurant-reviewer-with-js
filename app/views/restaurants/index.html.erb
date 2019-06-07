@@ -1,24 +1,28 @@
-<h1>Restaurants</h1><br>
+<div id="title" class="title">
+  <h1>Restaurants</h1><br>
+</div>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Restaurant</th>
-      <th scope="col">Total Reviews</th>
-      <th scope="col">Average Rating (out of 5 stars)</th>
-      <th scope="col">Cuisine</th>
-      <th scope="col">Neighborhood</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-secondary">
-    <% @restaurants.each do |restaurant| %>
-      <td><%= link_to restaurant.name, restaurant_path(restaurant) %></td>
-      <td><%= restaurant.reviews.count %></td>
-      <td><%= restaurant.average_rating %></td>
-      <td><%= restaurant.cuisine.name %></td>
-      <td><%= restaurant.neighborhood.name %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="restaurant-table">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Total Reviews</th>
+        <th scope="col">Average Rating (out of 5 stars)</th>
+        <th scope="col">Cuisine</th>
+        <th scope="col">Neighborhood</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-secondary">
+      <% @restaurants.each do |restaurant| %>
+        <td><%= link_to restaurant.name, restaurant_path(restaurant) %></td>
+        <td><%= restaurant.reviews.count %></td>
+        <td><%= restaurant.average_rating %></td>
+        <td><%= restaurant.cuisine.name %></td>
+        <td><%= restaurant.neighborhood.name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

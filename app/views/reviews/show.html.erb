@@ -1,12 +1,16 @@
-<% if @user == current_user %>
-  <h1>My Review of <%= @review.restaurant.name %></h1><br>
-<% else %>
-  <h1><%= @user.name %>'s Review of <%= @review.restaurant.name %></h1><br>
-<% end %>
-<p class="lead"><%= @review.comment %></p>
-<p class="lead"><%= @review.rating %>/5</p>
+<div id="title" class="title">
+  <% if @user == current_user %>
+    <h1>My Review of <%= @review.restaurant.name %></h1><br>
+  <% else %>
+    <h1><%= @user.name %>'s Review of <%= @review.restaurant.name %></h1><br>
+  <% end %>
+</div>
 
+<div id="attr">
+  <p class="lead"><%= @review.comment %></p>
+  <p class="lead"><%= @review.rating %>/5</p>
 <br>
+</div>
 
 <div class="buttons">
   <% if @user == current_user %>
