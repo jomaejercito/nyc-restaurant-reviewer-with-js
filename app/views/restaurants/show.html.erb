@@ -7,9 +7,14 @@
   <h4>Address: <%= @restaurant.address %></h4>
   <h4>Neighborhood: <%= @restaurant.neighborhood.name %></h4>
   <br><br>
-  <h4>Total Reviews: <%= @restaurant.reviews.count %><br></h4>
   <h4>Average Rating: <%= @restaurant.average_rating %><br></h4>
-  <br><br><br>
+  <h4>Total Reviews: <%= @restaurant.reviews.count %><br></h4>
+  <br><br>
+</div>
+
+<div class="buttons">
+  <button class="js-more btn btn-outline-primary">See Reviews</button>
+  <br><br><br><br><br>
 </div>
 
 <div id="restaurant-reviews">
