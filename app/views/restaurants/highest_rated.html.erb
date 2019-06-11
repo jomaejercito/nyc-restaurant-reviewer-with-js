@@ -1,8 +1,13 @@
-<h1>Highest Rated Restaurants</h1>
-<br><br>
-<% @restaurants.each do |restaurant| %>
-  <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-  <h4>Cuisine: <%= link_to restaurant.cuisine.name, cuisine_path(restaurant.cuisine) %></h4>
-  <h4>Neighborhood: <%= link_to restaurant.neighborhood.name, neighborhood_path(restaurant.neighborhood) %></h4>
-  <h4><%= restaurant.average_rating %> average rating</h4><br><br>
-<% end %>
+<div id="title" class="title">
+  <h1>Highest Rated Restaurants</h1>
+  <br><br>
+</div>
+
+<div id="restaurant-list" class="restaurant-list">
+  <% @restaurants.each do |restaurant| %>
+    <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+    <h4>Cuisine: <%= link_to restaurant.cuisine.name, cuisine_path(restaurant.cuisine) %></h4>
+    <h4>Neighborhood: <%= link_to restaurant.neighborhood.name, neighborhood_path(restaurant.neighborhood) %></h4>
+    <h4><%= restaurant.average_rating %> average rating</h4><br><br>
+  <% end %>
+</div>

@@ -19,6 +19,10 @@ class RestaurantsController < ApplicationController
 
   def highest_rated
     @restaurants = Restaurant.highest_rated
+    respond_to do |f|
+      f.html
+      f.json {render json: @restaurants}
+    end
   end
 
   def lowest_rated
