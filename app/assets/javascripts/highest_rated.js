@@ -5,7 +5,7 @@ $(() => {
 const bindClickHandlers = () => {
   $('.js-high').on('click', (e) => {
      e.preventDefault()
-     history.pushState(null, null, "restaurants")
+     history.pushState(null, null, "restaurants/highest_rated")
      fetch(`/restaurants/highest_rated.json`)
       .then(response => response.json())
       .then(restaurants => {
@@ -23,11 +23,12 @@ const bindClickHandlers = () => {
 function Restaurant(restaurant) {
   this.id = restaurant.id
   this.name = restaurant.name
+  this.average_rating = restaurant.average_rating
 }
 
 Restaurant.prototype.formatIndex = function() {
   let restaurantHtml = `
-    <a href="/restaurants/highest_rated/" class="show_link"><h1>${this.name}</h1></a>
+    <a href="/restaurants/highest_rated/" class="show_highest"><h4>${this.name}</h4></a>
   `
   return restaurantHtml
 }
