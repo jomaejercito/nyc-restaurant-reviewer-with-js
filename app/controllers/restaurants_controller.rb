@@ -31,6 +31,10 @@ class RestaurantsController < ApplicationController
 
   def popular
     @restaurants = Restaurant.popular
+    respond_to do |f|
+      f.html
+      f.json {render json: @restaurants}
+    end
   end
 
   private

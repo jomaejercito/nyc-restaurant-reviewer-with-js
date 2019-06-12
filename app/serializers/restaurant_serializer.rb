@@ -4,4 +4,5 @@ class RestaurantSerializer < ActiveModel::Serializer
   has_many :users, through: :reviews
   belongs_to :cuisine
   belongs_to :neighborhood
+
 end
