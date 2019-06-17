@@ -1,13 +1,14 @@
 $(() => {
   $('.form-group').on("submit", function(e){
     e.preventDefault()
-    console.log("submitting post")
 
     const values = ($(this).serialize())
 
     $.review(`/users/${id}/reviews`, values).done(function(data){
-      $('main').html('')
+      $('#main').html('')
       const newReview = new Review(data)
+      const htmlToAdd = newReview.formatShow()
+      $('#main').html(htmlToAdd)
     })
   })
 })
@@ -20,10 +21,10 @@ function Review(review) {
 }
 
 Review.prototype.formatShow = function(){
-  let reviewHtml = `
+  let htmlToAdd = `
     <h1>My Review of ${this.restaurant.name}</h1><br>
     <p>${this.comment}</p>
     <p>${this.rating}</p>
   `
-  return reviewHtml
+  return htmlToAdd
 }
