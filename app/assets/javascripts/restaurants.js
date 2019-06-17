@@ -33,6 +33,18 @@ const bindClickHandlers = () => {
         })
       })
   })
+  $(".js-next").on("click", function(){
+
+    let nextID = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get(`/restaurants/${nextID}.json`, function(data){
+      let restaurant = data;
+      $(".js-next").attr("data-id", restaurant["id"]);
+      let newRestaurant = new Restaurant(restaurant)
+      let restaurantHtml = newRestaurant.formatShow()
+      $("#main").empty()
+      $("#main").append(restaurantHtml)
+    })
+  })
 }
 
 function Restaurant(restaurant) {
@@ -46,6 +58,13 @@ function Restaurant(restaurant) {
 }
 
 Restaurant.prototype.formatIndex = function() {
+  let restaurantHtml = `
+    <h4>${this.name}</h4>
+  `
+  return restaurantHtml
+}
+
+Restaurant.prototype.formatShow = function() {
   let restaurantHtml = `
     <h4>${this.name}</h4>
   `
