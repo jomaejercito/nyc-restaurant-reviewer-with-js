@@ -50,6 +50,7 @@ const bindClickHandlers = () => {
 function Restaurant(restaurant) {
   this.id = restaurant.id
   this.name = restaurant.name
+  this.address = restaurant.address
   this.reviews = restaurant.reviews
   this.users = restaurant.users
   this.cuisine = restaurant.cuisine
@@ -66,7 +67,10 @@ Restaurant.prototype.formatIndex = function() {
 
 Restaurant.prototype.formatShow = function() {
   let restaurantHtml = `
-    <h4>${this.name}</h4>
+    <h1>${this.name}</h1><br>
+    <h4>${this.cuisine.name}</h4>
+    <h4>${this.address}</h4>
+    <h4>${this.neighborhood.name}</h4>
   `
   return restaurantHtml
 }
