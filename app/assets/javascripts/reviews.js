@@ -1,10 +1,10 @@
 $(() => {
-  $('.form-group').on("submit", function(e){
+  $(document).on("submit", '.form-group', function(e){
     e.preventDefault()
 
     const values = ($(this).serialize())
 
-    $.review(`/users/${id}/reviews`, values).done(function(data){
+    $.review(`/users/${this.user}/reviews`, values).done(function(data){
       $('#main').html('')
       const newReview = new Review(data)
       const htmlToAdd = newReview.formatShow()
@@ -18,6 +18,7 @@ function Review(review) {
   this.name = review.restaurant.name
   this.comment = review.comment
   this.rating = review.rating
+  this.user = user.id
 }
 
 Review.prototype.formatShow = function(){
