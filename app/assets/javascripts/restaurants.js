@@ -33,18 +33,18 @@ const bindClickHandlers = () => {
         })
       })
   })
-  // $(".js-next").on("click", function(){
-  //
-  //   let nextID = parseInt($(".js-next").attr("data-id")) + 1;
-  //   $.get(`/restaurants/${nextID}.json`, function(data){
-  //     let restaurant = data;
-  //     $(".js-next").attr("data-id", restaurant["id"]);
-  //     let newRestaurant = new Restaurant(restaurant)
-  //     let restaurantHtml = newRestaurant.formatShow()
-  //     $("#main").empty()
-  //     $("#main").append(restaurantHtml)
-  //   })
-  // })
+  $(".js-next").on("click", function(e){
+    e.preventDefault()
+    let nextID = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get(`/restaurants/${nextID}.json`, function(data){
+      let restaurant = data;
+      $(".js-next").attr("data-id", restaurant["id"]);
+      let newRestaurant = new Restaurant(restaurant)
+      let restaurantHtml = newRestaurant.formatShow()
+      $("#main").empty()
+      $("#main").append(restaurantHtml)
+    })
+  })
 }
 
 function Restaurant(restaurant) {
@@ -65,12 +65,12 @@ Restaurant.prototype.formatIndex = function() {
   return restaurantHtml
 }
 
-// Restaurant.prototype.formatShow = function() {
-//   let restaurantHtml = `
-//     <h1>${this.name}</h1><br>
-//     <h4>${this.cuisine.name}</h4>
-//     <h4>${this.address}</h4>
-//     <h4>${this.neighborhood.name}</h4>
-//   `
-//   return restaurantHtml
-// }
+Restaurant.prototype.formatShow = function() {
+  let restaurantHtml = `
+    <h1>${this.name}</h1><br>
+    <h4>${this.cuisine.name}</h4>
+    <h4>${this.address}</h4>
+    <h4>${this.neighborhood.name}</h4>
+  `
+  return restaurantHtml
+}

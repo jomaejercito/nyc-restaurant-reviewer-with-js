@@ -4,7 +4,7 @@ $(() => {
 
     const values = ($(this).serialize())
 
-    $.review(`/users/${this.user}/reviews`, values).done(function(data){
+    $.review(`/users/${this.userID}/reviews/`, values).done(function(data){
       $('#main').html('')
       const newReview = new Review(data)
       const htmlToAdd = newReview.formatShow()
@@ -18,7 +18,7 @@ function Review(review) {
   this.name = review.restaurant.name
   this.comment = review.comment
   this.rating = review.rating
-  this.user = user.id
+  this.userID = review.user.id
 }
 
 Review.prototype.formatShow = function(){
