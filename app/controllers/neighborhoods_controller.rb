@@ -3,6 +3,10 @@ class NeighborhoodsController < ApplicationController
 
   def index
     @neighborhoods = Neighborhood.all
+    respond_to do |f|
+      f.html
+      f.json {render json: @neighborhoods}
+    end
   end
 
   def show
