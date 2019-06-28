@@ -1,15 +1,15 @@
 <div id="restaurant">
   <div id="title" class="title">
-    <h1 class="name"><%= @restaurant.name %></h1><br>
+    <h1 class="restaurantName"><%= @restaurant.name %></h1><br>
   </div>
 
   <div id="restaurant-info">
-    <h4 class="cuisine">Cuisine: <%= @restaurant.cuisine.name %></h4>
-    <h4 class="address">Address: <%= @restaurant.address %></h4>
-    <h4 class="neighborhood">Neighborhood: <%= @restaurant.neighborhood.name %></h4>
+    <h4 class="restaurantCuisine">Cuisine: <%= @restaurant.cuisine.name %></h4>
+    <h4 class="restaurantAddress">Address: <%= @restaurant.address %></h4>
+    <h4 class="restaurantNeighborhood">Neighborhood: <%= @restaurant.neighborhood.name %></h4>
     <br><br>
-    <h4 class="rating">Average Rating: <%= @restaurant.average_rating %><br></h4>
-    <h4 class="reviews">Total Reviews: <%= @restaurant.reviews.count %><br></h4>
+    <h4 class="restaurantRating">Average Rating: <%= @restaurant.average_rating %><br></h4>
+    <h4 class="restaurantReviews">Total Reviews: <%= @restaurant.reviews.count %><br></h4>
     <br><br>
   </div>
 
@@ -22,9 +22,9 @@
 
   <div id="restaurant-reviews">
     <% @restaurant.reviews.each do |review| %>
-      <strong><h3><p class="user lead"><%= review.user.name %></p></h3></strong>
-      <p class="rating lead">Rating: <%= review.rating %>/5</p>
-      <p class="comment lead"><%= review.comment %></p>
+      <strong><h3><p class="reviewUser lead"><%= review.user.name %></p></h3></strong>
+      <p class="reviewRating lead">Rating: <%= review.rating %>/5</p>
+      <p class="reviewComment lead"><%= review.comment %></p>
       <br><br><br><br><br>
     <% end %>
   </div>
