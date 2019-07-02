@@ -44,6 +44,21 @@ $(() => {
   })
 })
 
+$(() => {
+  $(document).on("click", ".js-previous", function(e){
+    e.preventDefault()
+    let previousID = parseInt($(".js-previous").attr("data-id")) - 1;
+    $.get(`/restaurants/${previousID}.json`, function(data){
+      let restaurant = data;
+      $(".js-previous").attr("data-id", restaurant["id"]);
+      let newRestaurant = new Restaurant(restaurant)
+      let restaurantHtml = newRestaurant.formatShow()
+      $("#restaurant").empty()
+      $("#restaurant").append(restaurantHtml)
+    })
+  })
+})
+
 function Restaurant(restaurant) {
   this.id = restaurant.id
   this.name = restaurant.name
