@@ -11,10 +11,10 @@ class CuisinesController < ApplicationController
 
   def show
     @cuisine = Cuisine.find(params[:id])
-    # respond_to do |f|
-    #   f.html
-    #   f.json {render json: @cuisine}
-    # end
+    respond_to do |f|
+      f.html
+      f.json {render json: @cuisine}
+    end
   end
 
 end
