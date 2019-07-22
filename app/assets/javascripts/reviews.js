@@ -28,8 +28,8 @@ function Review(review) {
 Review.prototype.formatShow = function(){
   let reviewHtml = `
     <h1>My Review of ${this.restaurant}</h1><br>
-    <p>${this.comment}</p>
-    <p>${this.rating}/5</p>
+    <h4>${this.comment}</h4>
+    <h4>${this.rating}/5</h4>
   `
   return reviewHtml
 }
