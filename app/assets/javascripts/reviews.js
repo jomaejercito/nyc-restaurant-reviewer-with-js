@@ -22,14 +22,16 @@ function Review(review) {
   this.restaurant = review.restaurant.name
   this.comment = review.comment
   this.rating = review.rating
-  this.user = review.user
+  this.user = review.user.id
 }
 
 Review.prototype.formatShow = function(){
   let reviewHtml = `
-    <h1>My Review of ${this.restaurant}</h1><br>
+    <h1>My Review of ${this.restaurant}</h1><br><br>
+    <h4>Rating: ${this.rating}/5</h4><br>
     <h4>${this.comment}</h4>
-    <h4>${this.rating}/5</h4>
+    <br><br><br>
+    <center><a href="/users/${this.user}/reviews/" class="btn btn-outline-primary">Back to Your Reviews</a></center>
   `
   return reviewHtml
 }

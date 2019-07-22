@@ -5,6 +5,6 @@
 
 <div id="cuisine-list" class="cuisine-list">
   <% @cuisines.each do |cuisine| %>
-    <p class="cuisineList lead"><%= link_to cuisine.name, cuisine_path(cuisine) %><br><%= cuisine.restaurants.count %> Restaurants</p>
+    <h2><p class="cuisineList lead"><%= link_to cuisine.name, cuisine_path(cuisine) %></p></h2>
   <% end %>
 </div>

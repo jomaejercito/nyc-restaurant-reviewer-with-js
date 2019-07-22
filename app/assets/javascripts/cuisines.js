@@ -47,8 +47,9 @@ Cuisine.prototype.formatIndex = function() {
 Cuisine.prototype.formatShow = function() {
   const restaurant = this.restaurants.map(restaurant => restaurant.name);
   let cuisineHtml = `
-    <h1>${this.name}</h1>
+    <h1>${this.name}</h1><br><br>
     <h4><p class="lead">${restaurant}</p></h4>
+    <center><a href="/cuisines/" class="btn btn-outline-primary">Back to Cuisine List</a></center>
   `
 
   return cuisineHtml
