@@ -30,8 +30,8 @@ class ReviewsController < ApplicationController
   def create
     @review = @user.reviews.build(review_params) ## new does not retain the object in memory like build., If you're creating an object through an association, build should be preferred over new as build keeps your in-memory object
     if @review.save
-      redirect_to user_reviews_path(@user)
-      # render json: @review
+      # redirect_to user_reviews_path(@user)
+      render json: @review
     else
       render :new
     end
