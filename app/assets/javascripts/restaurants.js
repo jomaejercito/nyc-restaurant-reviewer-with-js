@@ -29,35 +29,35 @@ $(() => {
   })
 })
 
-$(() => {
-  $(document).on("click", ".js-next", function(e){
-    e.preventDefault()
-    let nextID = parseInt($(".js-next").attr("data-id")) + 1;
-    $.get(`/restaurants/${nextID}.json`, function(data){
-      let restaurant = data;
-      $(".js-next").attr("data-id", restaurant["id"]);
-      let newRestaurant = new Restaurant(restaurant)
-      let restaurantHtml = newRestaurant.formatShow()
-      $("#restaurant").empty()
-      $("#restaurant").append(restaurantHtml)
-    })
-  })
-})
-
-$(() => {
-  $(document).on("click", ".js-previous", function(e){
-    e.preventDefault()
-    let previousID = parseInt($(".js-previous").attr("data-id")) - 1;
-    $.get(`/restaurants/${previousID}.json`, function(data){
-      let restaurant = data;
-      $(".js-previous").attr("data-id", restaurant["id"]);
-      let newRestaurant = new Restaurant(restaurant)
-      let restaurantHtml = newRestaurant.formatShow()
-      $("#restaurant").empty()
-      $("#restaurant").append(restaurantHtml)
-    })
-  })
-})
+// $(() => {
+//   $(document).on("click", ".js-next", function(e){
+//     e.preventDefault()
+//     let nextID = parseInt($(".js-next").attr("data-id")) + 1;
+//     $.get(`/restaurants/${nextID}.json`, function(data){
+//       let restaurant = data;
+//       $(".js-next").attr("data-id", restaurant["id"]);
+//       let newRestaurant = new Restaurant(restaurant)
+//       let restaurantHtml = newRestaurant.formatShow()
+//       $("#restaurant").empty()
+//       $("#restaurant").append(restaurantHtml)
+//     })
+//   })
+// })
+//
+// $(() => {
+//   $(document).on("click", ".js-previous", function(e){
+//     e.preventDefault()
+//     let previousID = parseInt($(".js-previous").attr("data-id")) - 1;
+//     $.get(`/restaurants/${previousID}.json`, function(data){
+//       let restaurant = data;
+//       $(".js-previous").attr("data-id", restaurant["id"]);
+//       let newRestaurant = new Restaurant(restaurant)
+//       let restaurantHtml = newRestaurant.formatShow()
+//       $("#restaurant").empty()
+//       $("#restaurant").append(restaurantHtml)
+//     })
+//   })
+// })
 
 function Restaurant(restaurant) {
   this.id = restaurant.id
