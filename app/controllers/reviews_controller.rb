@@ -16,10 +16,6 @@ class ReviewsController < ApplicationController
   def show
     if current_user != find_user || set_review.user_id != current_user.id
       redirect_to user_reviews_path(@user)
-      respond_to do |f|
-        f.html
-        f.json {render json: @review}
-      end
     end
   end
 
