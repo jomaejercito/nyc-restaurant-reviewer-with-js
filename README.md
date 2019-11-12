@@ -2,7 +2,8 @@
 
 Welcome to NYC Restaurant Reviewer! This is an application that allows users to review restaurants located in NYC and see other user's reviews. Built with Rails with a jQuery front-end.
 
-Demo: https://youtu.be/X0VmeZf0bOY
+Demo pt 1: https://youtu.be/14gH_583fh0
+Demo pt 2: https://youtu.be/X0VmeZf0bOY
 
 ## Installation
 * Clone the repository into your computer
